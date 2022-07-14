@@ -3,9 +3,9 @@ title: API
 sidebar_position: 2
 ---
 
-# AdGuard DNS
+# AdGuard DNS API
 
-Adguard DNS는 앱을 통합하는데 사용할 수 있는 REST API를 제공합니다.
+AdGuard DNS provides a REST API you can use to integrate your apps with it.
 
 ## Authentication
 

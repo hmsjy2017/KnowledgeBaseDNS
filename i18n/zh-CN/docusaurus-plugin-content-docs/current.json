@@ -1,6 +1,6 @@
 {
   "version.label": {
-    "message": "下一个",
+    "message": "Next",
     "description": "The label for version current"
   },
   "sidebar.sidebar.category.General": {
@@ -8,23 +8,23 @@
     "description": "The label for category General in sidebar sidebar"
   },
   "sidebar.sidebar.category.Public DNS": {
-    "message": "公共 DNS",
+    "message": "Public DNS",
     "description": "The label for category Public DNS in sidebar sidebar"
   },
   "sidebar.sidebar.category.Solving problems": {
-    "message": "解决问题",
+    "message": "Solving problems",
     "description": "The label for category Solving problems in sidebar sidebar"
   },
   "sidebar.sidebar.category.Private DNS": {
-    "message": "私人 DNS",
+    "message": "Private DNS",
     "description": "The label for category Private DNS in sidebar sidebar"
   },
   "sidebar.sidebar.category.Miscellaneous": {
-    "message": "其它",
+    "message": "Miscellaneous",
     "description": "The label for category Miscellaneous in sidebar sidebar"
   },
   "sidebar.sidebar.category.Translating AdGuard DNS": {
-    "message": "翻译 AdGuard DNS",
+    "message": "Translating AdGuard DNS",
     "description": "The label for category Translating AdGuard DNS in sidebar sidebar"
   }
 }

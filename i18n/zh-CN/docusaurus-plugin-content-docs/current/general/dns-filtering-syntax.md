@@ -3,35 +3,35 @@ title: DNS 过滤规则语法
 sidebar_position: 2
 ---
 
-## 前言
+## Introduction
 
-您可以使用 AdGuard DNS 过滤规则语法来使规则更加灵活，因此它们可以根据您的首选项来拦截内容。 AdGuard DNS 过滤规则语法可用于不同的 AdGuard 产品，如 AdGuard Home、 AdGuard DNS、 Windows/Mac/Android 的 AdGuard。
+You can use AdGuard DNS filtering rules syntax to make the rules more flexible, so they can block content according to your preferences. AdGuard DNS filtering rules syntax can be used in different AdGuard products such as AdGuard Home, AdGuard DNS, AdGuard for Windows/Mac/Android.
 
-有三种不同的方法来编写主机拦截列表：
+There are three different approaches to writing hosts blocklists:
 
-* [Adblock 风格的语法](#adblock-style-syntax)： 基于使用 Adblock 风格的规则语法子集编写过滤规则的现代方法。 这样阻止拦截列表与浏览器广告拦截器兼容。
+* [Adblock 风格的语法](#adblock-style-syntax)是基于使用 Adblock 风格的规则语法子集编写过滤规则的现代方法。 This way blocklists are compatible with browser ad blockers.
 
-* [/etc/hosts 语法](#etc-hosts-syntax)： 使用与操作系统处理其主机文件相同的语法的老式、经过实践检验的语法。
+* [`/etc/hosts`语法](#etc-hosts-syntax)：使用与操作系统处理其主机文件相同的语法的老式、经过实践检验的语法。
 
-* [只适用于域的语法](#domains-only-syntax)：一个简单的域名列表。
+* [Domains-only 语法](#domains-only-syntax)是一个简单的域名列表。
 
-如果您要创建阻止列表，我们建议使用 [Adblock 样式语法](#adblock-style-syntax)。 与旧式语法相比，它有几个重要的优点：
+如果您要创建阻止列表，我们建议使用 [Adblock 样式语法](#adblock-style-syntax)。 It has a couple of important advantages over the old-style syntax:
 
-* **阻止列表大小。** 使用模式匹配允许您拥有单个规则，而不是数百个 `/etc/hosts` 条目。
+* **拦截列表大小。**使用模式匹配允许您拥有单个规则，而不是数百个 `/etc/hosts` 条目。
 
-* **兼容性。** 您的屏蔽列表将与浏览器广告拦截器兼容，并且与浏览器过滤器列表共享规则会更容易。
+* **兼容性。**您的屏蔽列表将与浏览器广告拦截器兼容，并且与浏览器过滤器列表共享规则会更容易。
 
-* **可扩展性。** 在过去的十年中，Adblock 风格的语法有了很大的发展，我们不明白为什么我们不能进一步扩展它并为网络范围的拦截器提供额外的功能。
+* **可扩展性。**在过去的十年中，Adblock 风格的语法有了很大的发展，我们不明白为什么我们不能进一步扩展它并为网络范围的拦截器提供额外的功能。
 
-如果你正在维护一个 `/etc/hosts`-风格的封锁清单，或者你维护多个过滤列表，无论其类型如何，我们提供一个工具，可以用来编译封杀清单。 我们称它为 [Hostlist compiler][hlc] ，我们自己用它来创建 [AdGuard DNS filter][sdn]。
+如果您正在使用一个 `/etc/hosts` 风格的拦截列表，或者您使用多个过滤列表，无论其类型如何，我们提供一个工具，可以用来编译拦截列表。 我们称它为 [Hostlist compiler][hlc] ，我们自己用它来创建 [AdGuard DNS 过滤器][sdn]。
 
-## 基本示例
+## Basic Examples
 
 * `||example.org^`：阻止访问 `example.org` 域及其所有子域，例如 `www.example.org` 。
 
 * `@@||example.org^`：取消阻止对 `example.org` 域及其所有子域的访问。
 
-* `1.2.3.4 example.org`: （注意，旧的 `/etc/hosts`-style 语法）在 AdGuard Home 中，用 `1.2.3.4` 对 `example.org` 域名的查询，但 **没有** 其子域的查询。 在私人AdGuard DNS中，阻止对 `example.org`的访问。 `www.example.org` 仍然允许。
+* `1.2.3.4 example.org`：（注意，旧的 `/etc/hosts` 语法）在 AdGuard Home 里用 `1.2.3.4` 对 `example.org` 域名的查询，但 **没有** 其子网域的查询。 在私人 AdGuard DNS 中，阻止对 `example.org` 的访问。 `www.example.org` 仍然允许。
 
   In AdGuard Home, using the unspecified IP address (`0.0.0.0`) or a local address (`127.0.0.1` and alike) for a host is basically the same as blocking that host.
 
@@ -48,7 +48,7 @@ sidebar_position: 2
 
 * `/REGEX/`: block access to the domains matching the specified regular expression.
 
-## Adblock 语法样式
+## Adblock-Style Syntax
 
 This is a subset of the [traditional Adblock-style][adb] syntax which is used by browser ad blockers.
 
